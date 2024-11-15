@@ -12,7 +12,7 @@
             <h2 class="card-title text-title">Details</h2>
             <Icon name="arrow-up" />
         </div>
-        <div class="myform">
+        <div class="form-wrapper">
             <JsonForms ref="jsonFormRef" :additionalErrors="errors" :data="formData" :renderers="renderers"
                 :schema="schema" :uischema="uischema" validationMode="ValidateAndHide" @change="onDataUpdate" />
         </div>
@@ -185,7 +185,9 @@ const onDataUpdate = (event: JsonFormsChangeEvent) => {
 </script>
 
 <style lang="scss" scoped>
-.myform {
+.form-wrapper {
+    margin-top: 15px;
+
     :deep(.vertical-layout) {
         flex-direction: row;
         flex-wrap: wrap;
