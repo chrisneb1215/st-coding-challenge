@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    right: 0;
+    right: 60px;
     left: 0;
     z-index: 1;
 
