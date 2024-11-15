@@ -1,7 +1,7 @@
 <template>
     <nav class="top-nav">
         <span class="inline-block nav-toggle">
-            <Icon name="navigation-menu" class="has-transition" />
+            <Icon name="navigation-menu" class="has-transition" @click="$emit('toggleSidebar')" />
         </span>
         <span class="logo flex-1">
             <Icon name="logo-placeholder" />
@@ -19,9 +19,6 @@
         </span>
     </nav>
 </template>
-
-<script lang="ts" setup>
-</script>
 
 <style lang="scss" scoped>
 .top-nav {

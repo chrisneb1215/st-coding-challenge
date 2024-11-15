@@ -18,8 +18,8 @@
         </div>
     </div>
 
-    <Teleport to="body">
-        <Footer>
+    <Teleport to="#app">
+        <Footer :class="{ 'sidebar-show': !showSidebar }">
             <button class="primary-button" :disabled="!isValid"><span>Next</span>
                 <Icon name="arrow-right" />
             </button>
@@ -42,6 +42,7 @@ import { JsonSchema } from "@jsonforms/core"
 
 const formData = ref<Partial<Profile>>({})
 const jsonFormRef = ref()
+const showSidebar = inject('showSidebar')
 
 type Profile = {
     forename: string

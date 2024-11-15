@@ -100,3 +100,18 @@ body {
       }
   }
 }
+
+
+.main-container, .footer, .side-bar {
+  transition: transform .3s;
+}
+
+.sidebar-show {
+  &.main-container {
+    transform: translate(-60px);
+  }
+
+  &.footer {
+    transform: translate(60px);
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-    <nav class="side-bar">
+    <nav class="side-bar" :class="{ 'sidebar-show': show }">
         <a :href="menu.path" v-for="menu in menuList" class="menu-item has-badge"
             :class="{ 'is-active': menu.isActive }">
             <span class="badge"></span>
@@ -10,6 +10,13 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+
+defineProps({
+    show: {
+        type: Boolean,
+        default: false
+    }
+})
 
 const menuList = ref([
     {
@@ -38,7 +45,9 @@ const menuList = ref([
     width: 60px;
     flex-shrink: 0;
     box-shadow: 0.5px 0px 0px 0px #0000001A;
-
+    z-index: -1;
+    position: relative;
+    left: 0;
 }
 
 .menu-item {

@@ -14,11 +14,11 @@
     background-color: #FFFFFF;
     position: fixed;
     bottom: 0;
-    left: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     right: 0;
+    left: 0;
 
     .footer-content {
         max-width: 1070px;

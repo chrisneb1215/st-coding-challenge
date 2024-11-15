@@ -1,17 +1,14 @@
 <template>
   <main class="main-layout">
-    <TopNav />
+    <TopNav @toggle-sidebar="showSidebar = !showSidebar" />
 
-    <div class="main-container">
-      <SideBar />
+    <div class="main-container" :class="{ 'sidebar-show': showSidebar }">
+      <SideBar :show="showSidebar" />
 
       <!-- Page content here, can also replace with router-view if router is implemented -->
       <div class="page-content">
         <ProfileDetails />
       </div>
-
-
-      <div id="footer"></div>
     </div>
   </main>
 </template>
@@ -20,6 +17,9 @@
 import TopNav from '@/components/layout/TopNav.vue'
 import SideBar from '@/components/layout/SideBar.vue'
 import ProfileDetails from '@/views/Profile.vue'
+
+const showSidebar = ref<boolean>(false)
+provide('showSidebar', showSidebar)
 </script>
 
 
