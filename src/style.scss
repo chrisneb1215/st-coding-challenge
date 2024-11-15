@@ -1,0 +1,102 @@
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+
+$primary: #003366;
+
+:root {
+  font-family: Figtree, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  
+  --background-secondary: #F9FAFB;
+  --background-tertiary: #F2F4F7;
+  --navbar-background: #FFFFFF;
+  --primary: #003366;
+  --text-primary: #000000;
+  --text-secondary: #202B37;
+  --error-primary: #F20D0D;
+  --margin: 15px;
+  --form-gap: 15px;
+  --border-radius: 8px;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-secondary);
+  margin: 0;
+  padding: 0;
+}
+
+.k-input-solid:focus, .k-input-solid.k-focus {
+  box-shadow: none;
+}
+
+.has-error {
+  .k-input.input {
+    border-color: #F98686;
+  }
+}
+
+.k-input.k-input-solid, .k-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 21px;
+  padding: 8px 8px 8px 12px;
+  color: var(--text-primary);
+  border: 1px solid #CED2DA;
+  border-radius: 8px;
+  height: 42px;
+
+  input, .k-input-inner {
+      height: 21px;
+      padding: 0;
+
+      &::placeholder {
+        color: #97A1AF;
+      }
+      
+  }
+
+  .k-icon-button {
+    border: 0;
+    background: white;
+  }
+}
+
+.primary-button {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  line-height: 20.8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px 20px 12px 20px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  float: right;
+  cursor: pointer;
+  border: 0;
+
+  span {
+      padding: 0 8px;
+  }
+
+  &:hover {
+      background-color: color.adjust($primary, $lightness: 50%);
+  }
+
+  &:disabled {
+      background-color: #CED2DA;
+      color: #97A1AF;
+      cursor: not-allowed;
+
+      svg path {
+        stroke: #97A1AF;
+      }
+  }
+}
