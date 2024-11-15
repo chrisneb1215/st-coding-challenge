@@ -13,8 +13,8 @@
             <Icon name="arrow-up" />
         </div>
         <div class="myform">
-            <JsonForms ref="jsonFormRef" :data="formData" :renderers="renderers" :schema="schema" :uischema="uischema"
-                validationMode="ValidateAndShow" @change="onDataUpdate" />
+            <JsonForms ref="jsonFormRef" :additionalErrors="errors" :data="formData" :renderers="renderers"
+                :schema="schema" :uischema="uischema" validationMode="ValidateAndHide" @change="onDataUpdate" />
         </div>
     </div>
 
@@ -148,9 +148,14 @@ type EmailRecord = {
 }
 
 const isValid = ref(true)
+const errors = ref<JsonFormsChangeEvent['errors']>([])
 
 const onDataUpdate = (event: JsonFormsChangeEvent) => {
     formData.value = event.data
+
+    if (Object.keys(event.data).length) {
+        errors.value = event.errors
+    }
 
     isValid.value = !!Object.keys(event.data).length && Object.keys(event.errors || {}).length === 0
 
