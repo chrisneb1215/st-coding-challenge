@@ -19,6 +19,7 @@
     justify-content: center;
     right: 0;
     left: 0;
+    z-index: 1;
 
     .footer-content {
         max-width: 1070px;
