@@ -1,7 +1,7 @@
 <template>
     <nav class="top-nav">
-        <span class="inline-block nav-toggle">
-            <Icon name="navigation-menu" class="has-transition" @click="$emit('toggleSidebar')" />
+        <span class="inline-block nav-toggle" @click="$emit('toggleSidebar')">
+            <Icon name="navigation-menu" class="has-transition" />
         </span>
         <span class="logo flex-1">
             <Icon name="logo-placeholder" />
@@ -28,6 +28,7 @@
     background-color: var(--navbar-background);
     box-shadow: 0px 1px 0px 0px #00000014;
     padding: 0 20px 0 0;
+    z-index: 1;
 
     .nav-toggle {
         display: flex;
@@ -39,6 +40,7 @@
         align-items: center;
         justify-content: center;
         transition: all ease-in-out 0.2s;
+        cursor: pointer;
 
         svg {
             height: 20px;

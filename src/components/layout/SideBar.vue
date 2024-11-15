@@ -45,7 +45,6 @@ const menuList = ref([
     width: 60px;
     flex-shrink: 0;
     box-shadow: 0.5px 0px 0px 0px #0000001A;
-    z-index: -1;
     position: relative;
     left: 0;
 }
